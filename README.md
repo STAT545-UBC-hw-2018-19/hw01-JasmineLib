@@ -12,7 +12,7 @@ This Repo is where I will be submitting exercises for the first STAT 545A homewo
 3. Reflection
 
 Other: 
-- [x] * Course Survey
+* - [x] Course Survey
 
 
 
