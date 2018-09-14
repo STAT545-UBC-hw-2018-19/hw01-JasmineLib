@@ -29,7 +29,26 @@ Conclusion: The means of the mutants appear to be different from that of the wil
 ### Perform a t-test
 A useful link to find out what t-test to use: https://researchbasics.education.uconn.edu/t-test/
 
-Compare fluorescence of mutant 1 to that of wildtype:
+####Compare fluorescence of mutant 1 to that of wildtype:
 ```{r}
-t.test(fluor_m1, fluor_wt)
+(fluor_m1wt_ttest = t.test(fluor_m1, fluor_wt))
 ```
+
+Can save and print the p-value from a t-test as a variable: 
+Useful link for learning to do this: https://stackoverflow.com/questions/31205554/output-p-value-from-a-t-test-in-r
+```{r}
+(m1wt_ttest_pval = fluor_m1wt_ttest$p.value)
+(type(m1wt_ttest_pval))
+```
+Is the p-value below 0.05? Visually yes, but I can check this using an if/else statement
+Useful link for if-else statements: https://stackoverflow.com/questions/25885358/if-else-if-else-statement-and-brackets
+```{r}
+ if (int(m1wt_ttest_pval) < 0.05) { 
+  print("Accept alternate hypothesis")
+   } else if (int(m1wt_ttest_pval) >= 0.05) {
+  print("Accept null hypothesis")
+     else {
+       print("error")
+     }
+} 
+
