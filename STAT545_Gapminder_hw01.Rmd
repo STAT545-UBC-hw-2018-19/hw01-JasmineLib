@@ -29,7 +29,7 @@ Conclusion: The means of the mutants appear to be different from that of the wil
 ### Perform a t-test
 A useful link to find out what t-test to use: https://researchbasics.education.uconn.edu/t-test/
 
-####Compare fluorescence of mutant 1 to that of wildtype:
+#### Compare fluorescence of mutant 1 to that of wildtype:
 ```{r}
 (fluor_m1wt_ttest = t.test(fluor_m1, fluor_wt))
 ```

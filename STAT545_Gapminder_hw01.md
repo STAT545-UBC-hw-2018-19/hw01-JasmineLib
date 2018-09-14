@@ -42,10 +42,10 @@ Conclusion: The means of the mutants appear to be different from that of the wil
 
 A useful link to find out what t-test to use: <https://researchbasics.education.uconn.edu/t-test/>
 
-Compare fluorescence of mutant 1 to that of wildtype:
+#### Compare fluorescence of mutant 1 to that of wildtype:
 
 ``` r
-t.test(fluor_m1, fluor_wt)
+(fluor_m1wt_ttest = t.test(fluor_m1, fluor_wt))
 ```
 
     ## 
@@ -59,3 +59,71 @@ t.test(fluor_m1, fluor_wt)
     ## sample estimates:
     ## mean of x mean of y 
     ##  58.30167  16.14500
+
+Can save and print the p-value from a t-test as a variable: Useful link for learning to do this: <https://stackoverflow.com/questions/31205554/output-p-value-from-a-t-test-in-r>
+
+``` r
+(m1wt_ttest_pval = fluor_m1wt_ttest$p.value)
+```
+
+    ## [1] 1.391261e-08
+
+``` r
+(typeof(m1wt_ttest_pval))
+```
+
+    ## [1] "double"
+
+Is the p-value below 0.05? Visually yes, but I can check this using an if/else statement Useful link for if-else statements: <https://stackoverflow.com/questions/25885358/if-else-if-else-statement-and-brackets>
+
+``` r
+if (m1wt_ttest_pval < 0.05) {
+  print("Accept alternate hypothesis")
+} else if (m1wt_ttest_pval >= 2) {
+  print("Accept null hypothesis")
+} else {
+  print("Error")
+}
+```
+
+    ## [1] "Accept alternate hypothesis"
+
+Given these results, I accept the null hypothesis, and I conclude that the mean of M1 is significantly different from that of the wildtype.
+
+Now I can repeat the analysis for mutant 2:
+
+``` r
+(fluor_m2wt_ttest = t.test(fluor_m2, fluor_wt))
+```
+
+    ## 
+    ##  Welch Two Sample t-test
+    ## 
+    ## data:  fluor_m2 and fluor_wt
+    ## t = 12.421, df = 12.945, p-value = 1.447e-08
+    ## alternative hypothesis: true difference in means is not equal to 0
+    ## 95 percent confidence interval:
+    ##  33.32947 47.37220
+    ## sample estimates:
+    ## mean of x mean of y 
+    ##  56.49583  16.14500
+
+``` r
+(m2wt_ttest_pval = fluor_m2wt_ttest$p.value)
+```
+
+    ## [1] 1.4467e-08
+
+``` r
+if (m2wt_ttest_pval < 0.05) {
+  print("Accept alternate hypothesis")
+} else if (m2wt_ttest_pval >= 2) {
+  print("Accept null hypothesis")
+} else {
+  print("Error")
+}
+```
+
+    ## [1] "Accept alternate hypothesis"
+
+Again, for the second mutant, we conclude that the mean is significantly different from that of the wildtype.
