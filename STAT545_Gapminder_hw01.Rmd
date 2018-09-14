@@ -38,17 +38,33 @@ Can save and print the p-value from a t-test as a variable:
 Useful link for learning to do this: https://stackoverflow.com/questions/31205554/output-p-value-from-a-t-test-in-r
 ```{r}
 (m1wt_ttest_pval = fluor_m1wt_ttest$p.value)
-(type(m1wt_ttest_pval))
+(typeof(m1wt_ttest_pval))
 ```
 Is the p-value below 0.05? Visually yes, but I can check this using an if/else statement
 Useful link for if-else statements: https://stackoverflow.com/questions/25885358/if-else-if-else-statement-and-brackets
-```{r}
- if (int(m1wt_ttest_pval) < 0.05) { 
-  print("Accept alternate hypothesis")
-   } else if (int(m1wt_ttest_pval) >= 0.05) {
-  print("Accept null hypothesis")
-     else {
-       print("error")
-     }
-} 
 
+```{r}
+if (m1wt_ttest_pval < 0.05) {
+  print("Accept alternate hypothesis")
+} else if (m1wt_ttest_pval >= 2) {
+  print("Accept null hypothesis")
+} else {
+  print("Error")
+}
+```
+Given these results, I accept the null hypothesis, and I conclude that the mean of M1 is significantly different from that of the wildtype. 
+
+Now  I can repeat the analysis for mutant 2: 
+```{r}
+(fluor_m2wt_ttest = t.test(fluor_m2, fluor_wt))
+(m2wt_ttest_pval = fluor_m2wt_ttest$p.value)
+
+if (m2wt_ttest_pval < 0.05) {
+  print("Accept alternate hypothesis")
+} else if (m2wt_ttest_pval >= 2) {
+  print("Accept null hypothesis")
+} else {
+  print("Error")
+}
+```
+Again, for the second mutant, we conclude that the mean is significantly different from that of the wildtype. 
