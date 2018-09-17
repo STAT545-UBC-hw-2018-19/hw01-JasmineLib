@@ -36,11 +36,11 @@ Compute the average of the values in each vector using the 'mean' function Note:
 
     ## [1] 16.145
 
-Conclusion: The means of the mutants appear to be different from that of the wildtype. Will need to perform a t-test using the t-test function in R in order to confirm whether this difference is significant.
+**Initial Conclusion:** The means of the mutants appear to be different from that of the wildtype. Will need to perform a t-test using the t-test function in R in order to confirm whether this difference is significant.
 
 ### Perform a t-test
 
-A useful link to find out \[what t-test to use\] (<https://researchbasics.education.uconn.edu/t-test/>):
+A useful link to find out [what t-test to use](https://researchbasics.education.uconn.edu/t-test/):
 
 #### Compare fluorescence of mutant 1 to that of wildtype:
 
@@ -88,7 +88,7 @@ if (m1wt_ttest_pval < 0.05) {
 
     ## [1] "Accept alternate hypothesis"
 
-Given these results, I accept the null hypothesis, and I conclude that the mean of M1 is significantly different from that of the wildtype.
+**Conclusion M1:** Given these results, I accept the null hypothesis, and I conclude that the mean of M1 is significantly different from that of the wildtype.
 
 Now I can repeat the analysis for mutant 2:
 
@@ -126,4 +126,6 @@ if (m2wt_ttest_pval < 0.05) {
 
     ## [1] "Accept alternate hypothesis"
 
-Again, for the second mutant, we conclude that the mean is significantly different from that of the wildtype.
+**Conclusion M2:** Again, for the second mutant, we conclude that the mean is significantly different from that of the wildtype.
+
+**Final Conclusion:** The average fluorescence intensity of both mutants are significantly higher than that of the wildtype.
