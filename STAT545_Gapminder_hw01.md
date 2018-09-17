@@ -16,7 +16,7 @@ fluor_wt = c(12.23, 10.72, 17.28, 16.55, 22.25, 15.81, 17.32, 12.8, 16.5, 14.71,
 
 ### Compute the mean of each dataset:
 
-Compute the average of the values in each vector using the 'mean' function Note: to remove missing values, use na.rm (see ?mean in search.)
+Compute the average of the values in each vector using the 'mean' function Note: to remove missing values in a vector, use na.rm (see ?mean in search.)
 
 ``` r
 (mean_fluorm1 = mean(fluor_m1))
@@ -36,11 +36,11 @@ Compute the average of the values in each vector using the 'mean' function Note:
 
     ## [1] 16.145
 
-Conclusion: The means of the mutants appear to be different from that of the wildtype. Will perform a t-test using the t-test function in R.
+Conclusion: The means of the mutants appear to be different from that of the wildtype. Will need to perform a t-test using the t-test function in R in order to confirm whether this difference is significant.
 
 ### Perform a t-test
 
-A useful link to find out what t-test to use: <https://researchbasics.education.uconn.edu/t-test/>
+A useful link to find out \[what t-test to use\] (<https://researchbasics.education.uconn.edu/t-test/>):
 
 #### Compare fluorescence of mutant 1 to that of wildtype:
 
@@ -60,7 +60,7 @@ A useful link to find out what t-test to use: <https://researchbasics.education.
     ## mean of x mean of y 
     ##  58.30167  16.14500
 
-I can now save and print the p-value from a t-test as a variable: Useful link for learning how to do this: <https://stackoverflow.com/questions/31205554/output-p-value-from-a-t-test-in-r>
+I can now save and print the p-value from a t-test as a variable: Useful link for learning how to [store an output p-value into a variable](https://stackoverflow.com/questions/31205554/output-p-value-from-a-t-test-in-r):
 
 ``` r
 (m1wt_ttest_pval = fluor_m1wt_ttest$p.value)
@@ -74,7 +74,7 @@ I can now save and print the p-value from a t-test as a variable: Useful link fo
 
     ## [1] "double"
 
-Is the p-value below 0.05? Visually yes, but I can check this using an if/else statement Useful link for if-else statements: <https://stackoverflow.com/questions/25885358/if-else-if-else-statement-and-brackets>
+Is the p-value below 0.05? Visually yes, but I can check this using an if/else statement Useful link for [if-else statements](https://stackoverflow.com/questions/25885358/if-else-if-else-statement-and-brackets):
 
 ``` r
 if (m1wt_ttest_pval < 0.05) {
