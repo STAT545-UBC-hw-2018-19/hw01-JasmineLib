@@ -6,7 +6,7 @@ Goal: Compare average fluorescence intensity of two Mutant reporter proteins to 
 
 ### Create datasets:
 
-Create three vectors containing values of fluorescence intensity values from independent experiments for both mutants and the wildtype
+Create three vectors containing values of fluorescence intensity values from independent experiments for two different mutants (m1 and m2) as well as the wildtype
 
 ``` r
 fluor_m1 = c(55.74, 70.81, 36.74, 65.1, 57.22, 77.69, 53.58, 63.94, 50.8, 64.05, 45.09, 58.86)
@@ -60,7 +60,7 @@ A useful link to find out what t-test to use: <https://researchbasics.education.
     ## mean of x mean of y 
     ##  58.30167  16.14500
 
-Can save and print the p-value from a t-test as a variable: Useful link for learning to do this: <https://stackoverflow.com/questions/31205554/output-p-value-from-a-t-test-in-r>
+I can now save and print the p-value from a t-test as a variable: Useful link for learning how to do this: <https://stackoverflow.com/questions/31205554/output-p-value-from-a-t-test-in-r>
 
 ``` r
 (m1wt_ttest_pval = fluor_m1wt_ttest$p.value)

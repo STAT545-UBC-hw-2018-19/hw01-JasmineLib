@@ -2,7 +2,7 @@
 title: "STAT 545 Gapminder Homework"
 output: github_document
 ---
-##Goal: Compare average fluorescence intensity of two Mutant reporter proteins to that of Wildtype reporter
+## Goal: Compare average fluorescence intensity of two Mutant reporter proteins to that of Wildtype reporter
 
 ### Create datasets:
 
@@ -24,6 +24,8 @@ Note: to remove missing values, use na.rm (see ?mean in search.)
 (mean_fluorwt = mean(fluor_wt))
 
 ```
+
+
 Conclusion: The means of the mutants appear to be different from that of the wildtype. Will perform a t-test using the t-test function in R. 
 
 ### Perform a t-test
