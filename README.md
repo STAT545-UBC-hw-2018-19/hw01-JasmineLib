@@ -1,6 +1,6 @@
 
 # Jasmine's Homework01 Assignment
-This Repo is where I will be submitting exercises for the first STAT 545A homework assignment :bowtie:
+This Repo is where I will be submitting exercises for the first [STAT 545A](http://stat545.com/) homework assignment :bowtie:
 
 
 ## About Me!
@@ -8,7 +8,7 @@ I'm a second year MSc Student in Biochemistry and Molecular Biology. Briefly, we
 
 ### Fun Facts
 * Hiking and camping are my favourite activities, which is why I couldn't stay away from the West Coast. :tent: :evergreen_tree:
-* My guilty pleasure are the bulk dark chocolate almonds at Grocery Checkout in the Nest. :chocolate_bar:
+* My guilty pleasures are the dark chocolate almonds at Grocery Checkout in the Nest. :chocolate_bar:
 
 ### 
 
