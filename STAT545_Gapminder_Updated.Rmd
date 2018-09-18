@@ -34,7 +34,7 @@ The summary function gives information on the mean and quartile values of the ov
 ```{r}
 iris$Species
 ```
-I conclude there are 3 different species (by looking at the outpud "levels"): setosa, versicolor and virginica
+I conclude there are 3 different species (by looking at the output "levels"): setosa, versicolor and virginica
 
 
 
@@ -94,7 +94,7 @@ title("Setosa Sepal Length")
 Visually, it appears that there are no obvious outliers. 
 
 
-##### [create boxplots](https://www.statmethods.net/graphs/boxplot.html) of sepal length, in order to compare mean sepal length of various iris species.
+##### [Create boxplots](https://www.statmethods.net/graphs/boxplot.html) of sepal length, in order to compare mean sepal length of various iris species.
 
 ```{r}
 boxplot(Sepal.Length~Species, data=iris, xlab="Species", ylab="Sepal Length")
