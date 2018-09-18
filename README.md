@@ -8,6 +8,8 @@ The correct files are:
 and 
 [STAT545_Gapminder_updated.md](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_Updated.md)
 
+Graph output files can be found [here](https://github.com/STAT545-UBC-students/hw01-JasmineLib/tree/master/STAT545_Gapminder_Updated_files/figure-markdown_github).
+
 The other files [STAT545_Gapminder_hw01.md](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_hw01.md) and [STAT545_Gapminder_hw01.Rmd](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_hw01.Rmd) contain an analysis of a small vector dataset that I created, and performed a t-test on. 
 
 Please consider the "updated" files as my homework submission, but feel free to look through the other files as I would love any suggestions on how to improve the code.
