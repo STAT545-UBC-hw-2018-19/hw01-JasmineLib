@@ -13,12 +13,9 @@ I'm a second year MSc Student in [Biochemistry and Molecular Biology](https://bi
 ### 
 
 ## Homework01 Task List :books:
-1. -[x] Introduce Myself
-  * Found in this ReadMe
-2. -[ ] Gapminder exploration
-  * Found in the Gapminder.md and Gapminder.Rmd files
-3. -[ ] Reflection
-
+1. -[x] Introduce myself in this ReadMe
+2. -[x] Gapminder exploration - STAT545_Gapminder_hw01.md and STAT545_Gapminder_hw01.Rmd files
+3. -[x] Reflection - submitted on UBC Canvas
 Other: 
 * - [x] Course Survey
 
