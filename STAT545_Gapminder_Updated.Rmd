@@ -9,12 +9,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Updated Gapminder Homework Assignment
 
-**Note:** A previous file shows a data analysis I attempted using a dataset that I created myself. I misunderstood the homework instructions, so I am performing the correct data analysis here. In the original file [STAT545_gapminder_hw01](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_hw01.md) I performed a t-test on two of my data sets, and studied the resulting p-values (with links on how I learned to do this), which may be useful to some of you reading this now!
+**Note:** A previous file shows a data analysis I attempted using a dataset that I created myself. I misunderstood the homework instructions, so I am performing the correct data analysis here. In the original file [STAT545_gapminder_hw01](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_hw01.md) I performed a t-test on two of my own data sets, and studied the resulting p-values (I included links on how I learned to do this in the document), which may be useful to some of you reading this now!
 
-Part 1
+
 ###Explore the iris dataframe
 
 ```{r}
+library(tidyverse)
 data(iris)
 head(iris)
 ncol(iris)
@@ -35,10 +36,50 @@ I conclude there are 3 different species (by looking at the outpud "levels"): se
 
 
 3. Compare sepal length (Sepal.Length) of setosa and versicolor species
+To do this, I used the [cm005 notes on piping](http://stat545.com/Classroom/notes/cm005.nb.html) as well as a tutorial on finding the [mean of a column in r](https://stackoverflow.com/questions/23163863/mean-of-a-column-in-a-data-frame-given-the-columns-name)
 ```{r}
+library(tidyverse)
+setosa = iris %>% 
+
+  filter(Species == "setosa") %>% 
+  select(Sepal.Length)
+  
+
+versicolor = iris %>% 
+  filter(Species == "versicolor") %>% 
+  select(Sepal.Length)
+
+# I can check the mean of the Sepal length for setosa and versicolor species using the mean function:
+mean(setosa[["Sepal.Length"]])
+mean(versicolor[["Sepal.Length"]])
 
 ```
 
+4. I can calculate the variance of the sepal length in the setosa species using the var function:
+```{r}
+var(setosa)
+```
+5. I can check this result manually, by calculating the variance. The equation for variance can be found [here](http://www.r-tutor.com/elementary-statistics/numerical-measures/variance)
+
+
+breaking down the equation:
+  1.find the differences between each entry in setosa compared to the mean:
+  (setosa$Sepal.Length - 5.006)
+  2. Take the square of resulting vector:
+(setosa$Sepal.Length - 5.006)^2
+3. Take the sum of the squared vector:
+sum((setosa$Sepal.Length - 5.006)^2)
+4. Divide by the number of rows in setosa -1
+sum((setosa$Sepal.Length - 5.006)^2)/(nrow(setosa)-1)
+
+```{r}
+
+#overall, the equation comes to:
+sum((setosa$Sepal.Length-5.006)^2)/(nrow(setosa)-1)
+
+
+
+```
 
 
 
