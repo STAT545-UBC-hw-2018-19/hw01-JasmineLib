@@ -8,6 +8,9 @@ The correct files are:
 and 
 [STAT545_Gapminder_updated.md](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_Updated.md)
 
+The other files [STAT545_Gapminder_hw01.md](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_hw01.md) and [STAT545_Gapminder_hw01.Rmd](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_hw01.Rmd) contain an analysis of a small vector dataset that I created, and performed a t-test on. 
+
+
 ## About Me!
 I'm a second year MSc Student in [Biochemistry and Molecular Biology](https://biochem.ubc.ca/). Briefly, we study translation and use RNA viruses as a model to study unique translation mechanisms. I'm excited to be taking this class, so I can do better analyses of my data, as well as start learning skills for future jobs! 
 
@@ -21,6 +24,7 @@ I'm a second year MSc Student in [Biochemistry and Molecular Biology](https://bi
 1. -[x] Introduce myself in this ReadMe
 2. -[x] Gapminder exploration - STAT545_Gapminder_Updated.md and STAT545_Gapminder_Updated.Rmd files
 3. -[x] Reflection - submitted on UBC Canvas
+
 Other: 
 * - [x] Course Survey
 
