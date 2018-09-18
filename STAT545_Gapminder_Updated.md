@@ -108,7 +108,7 @@ iris$Species
     ## [145] virginica  virginica  virginica  virginica  virginica  virginica 
     ## Levels: setosa versicolor virginica
 
-I conclude there are 3 different species (by looking at the outpud "levels"): setosa, versicolor and virginica
+I conclude there are 3 different species (by looking at the output "levels"): setosa, versicolor and virginica
 
 ##### Compare sepal length (Sepal.Length) of setosa and versicolor species
 
@@ -164,4 +164,27 @@ sum((setosa$Sepal.Length-5.006)^2)/(nrow(setosa)-1)
 
     ## [1] 0.124249
 
-**6. Conclusion:The result is the same for both the manual variance calculation as well as the result from the var function!**
+**Conclusion:** The result is the same for both the manual variance calculation as well as the result from the var function!
+
+#### Part 3: [Create simple plots](https://www.harding.edu/fmccown/r/) of iris data
+
+##### plot Setosa sepal length.
+
+This scatter plot can help us visually look for potential outliers.
+
+``` r
+plot(setosa$Sepal.Length, ylab= "Sepal Length", xlab = "Index")
+title("Setosa Sepal Length")
+```
+
+![](STAT545_Gapminder_Updated_files/figure-markdown_github/unnamed-chunk-6-1.png) Visually, it appears that there are no obvious outliers.
+
+##### [Create boxplots](https://www.statmethods.net/graphs/boxplot.html) of sepal length, in order to compare mean sepal length of various iris species.
+
+``` r
+boxplot(Sepal.Length~Species, data=iris, xlab="Species", ylab="Sepal Length")
+```
+
+![](STAT545_Gapminder_Updated_files/figure-markdown_github/unnamed-chunk-7-1.png)
+
+**Conclusion:** It appears that the virginica species iris has the longest sepals. Moreover, there appears to be one outlier within the virginica data, as seen from the boxplot.
