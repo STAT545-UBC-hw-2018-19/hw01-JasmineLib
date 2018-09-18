@@ -8,6 +8,8 @@ Updated Gapminder Homework Assignment
 
 ### Explore the iris dataframe
 
+#### Part 1: Explore the dataframe itself
+
 ``` r
 library(tidyverse)
 ```
@@ -67,11 +69,13 @@ summary(iris)
     ##                 
     ## 
 
-There are 5 columns and 150 rows in this dataset.
+**Conclusion:** There are 5 columns and 150 rows in this dataset. We see from the head function that the dataframe contains information on length and width of petals and sepals of different iris species. The summary function gives information on the mean and quartile values of the overall length and widths of all irises.
 
 ### Explore variables in the iris dataframe.
 
-1.  In particular, I want to observe the species in this dataframe.
+#### Part 2: Explore the species and sepal length variables in the iris dataframe.
+
+##### Look at what species are present:
 
 ``` r
 iris$Species
@@ -106,7 +110,9 @@ iris$Species
 
 I conclude there are 3 different species (by looking at the outpud "levels"): setosa, versicolor and virginica
 
-1.  Compare sepal length (Sepal.Length) of setosa and versicolor species To do this, I used the [cm005 notes on piping](http://stat545.com/Classroom/notes/cm005.nb.html) as well as a tutorial on finding the [mean of a column in r](https://stackoverflow.com/questions/23163863/mean-of-a-column-in-a-data-frame-given-the-columns-name)
+##### Compare sepal length (Sepal.Length) of setosa and versicolor species
+
+To do this, I used the [cm005 notes on piping](http://stat545.com/Classroom/notes/cm005.nb.html) as well as a tutorial on finding the [mean of a column in r](https://stackoverflow.com/questions/23163863/mean-of-a-column-in-a-data-frame-given-the-columns-name)
 
 ``` r
 library(tidyverse)
@@ -132,7 +138,7 @@ mean(versicolor[["Sepal.Length"]])
 
     ## [1] 5.936
 
-1.  I can calculate the variance of the sepal length in the setosa species using the var function:
+##### I can calculate the variance of the sepal length in the setosa species using the var function:
 
 ``` r
 var(setosa)
@@ -141,69 +147,21 @@ var(setosa)
     ##              Sepal.Length
     ## Sepal.Length     0.124249
 
-1.  I can check this result manually, by calculating the variance. The equation for variance can be found [here](http://www.r-tutor.com/elementary-statistics/numerical-measures/variance)
+##### I can check this result manually, by calculating the variance. The equation for variance can be found [here](http://www.r-tutor.com/elementary-statistics/numerical-measures/variance)
 
-breaking down the equation: 1. find the differences between each entry in setosa compared to the mean: (setosa*S**e**p**a**l*.*L**e**n**g**t**h* − 5.006)2.*T**a**k**e**t**h**e**s**q**u**a**r**e**o**f**r**e**s**u**l**t**i**n**g**v**e**c**t**o**r* : (*s**e**t**o**s**a*Sepal.Length - 5.006)^2 3. Take the sum of the squared vector: sum((setosa*S**e**p**a**l*.*L**e**n**g**t**h* − 5.006)<sup>2</sup>)4.*D**i**v**i**d**e**b**y**t**h**e**n**u**m**b**e**r**o**f**r**o**w**s**i**n**s**e**t**o**s**a* − 1*s**u**m*((*s**e**t**o**s**a*Sepal.Length - 5.006)^2)/(nrow(setosa)-1)
+###### breaking down the equation:
+
+1.  find the differences between each entry in setosa compared to the mean: (setosa$Sepal.Length - 5.006)
+2.  Take the square of resulting vector: (setosa$Sepal.Length - 5.006)^2
+3.  Take the sum of the squared vector: sum((setosa$Sepal.Length - 5.006)^2)
+4.  Divide by the number of rows in setosa -1 sum((setosa$Sepal.Length - 5.006)^2)/(nrow(setosa)-1)
+
+Overall, the equation becomes:
 
 ``` r
-#overall, the equation comes to:
 sum((setosa$Sepal.Length-5.006)^2)/(nrow(setosa)-1)
 ```
 
     ## [1] 0.124249
 
-1.  Load the gapminder package and explore the data inside it using the head() function
-
-``` r
-library(gapminder)
-head(gapminder)
-```
-
-    ## # A tibble: 6 x 6
-    ##   country     continent  year lifeExp      pop gdpPercap
-    ##   <fctr>      <fctr>    <int>   <dbl>    <int>     <dbl>
-    ## 1 Afghanistan Asia       1952    28.8  8425333       779
-    ## 2 Afghanistan Asia       1957    30.3  9240934       821
-    ## 3 Afghanistan Asia       1962    32.0 10267083       853
-    ## 4 Afghanistan Asia       1967    34.0 11537966       836
-    ## 5 Afghanistan Asia       1972    36.1 13079460       740
-    ## 6 Afghanistan Asia       1977    38.4 14880372       786
-
-1.  Load tidyverse and explore the average life expectancy in 1952 in the continent with the most entries.
-
-``` r
-library(tidyverse)
-gapminder %>% 
-  select(continent, lifeExp, year) %>% 
-  filter(year =="1952") %>% 
-  summary() #this outputs the 5 continents, so I can ensure there are values in each one, and there are.
-```
-
-    ##     continent     lifeExp           year     
-    ##  Africa  :52   Min.   :28.80   Min.   :1952  
-    ##  Americas:25   1st Qu.:39.06   1st Qu.:1952  
-    ##  Asia    :33   Median :45.14   Median :1952  
-    ##  Europe  :30   Mean   :49.06   Mean   :1952  
-    ##  Oceania : 2   3rd Qu.:59.77   3rd Qu.:1952  
-    ##                Max.   :72.67   Max.   :1952
-
-1.  From above, I can see that there are the most entries in the continent of Africa, so I will explore Asia's average life expectancy in 1952.
-
-``` r
-gapminder %>% 
-  select(continent, lifeExp, year) %>% 
-  filter(continent== "Asia" & year =="1952") %>% 
-  summary()
-```
-
-    ##     continent     lifeExp           year     
-    ##  Africa  : 0   Min.   :28.80   Min.   :1952  
-    ##  Americas: 0   1st Qu.:39.42   1st Qu.:1952  
-    ##  Asia    :33   Median :44.87   Median :1952  
-    ##  Europe  : 0   Mean   :46.31   Mean   :1952  
-    ##  Oceania : 0   3rd Qu.:50.94   3rd Qu.:1952  
-    ##                Max.   :65.39   Max.   :1952
-
-``` r
-#using the summary function, I determine that the mean life expectancy in Africa in 1952 is 46.31 years. 
-```
+**6. Conclusion:The result is the same for both the manual variance calculation as well as the result from the var function!**

@@ -14,6 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ###Explore the iris dataframe
 
+####Part 1: Explore the dataframe itself
 ```{r}
 library(tidyverse)
 data(iris)
@@ -24,10 +25,12 @@ summary(iris)
 
 ```
 
-There are 5 columns and 150 rows in this dataset.
+**Conclusion:** There are 5 columns and 150 rows in this dataset. We see from the head function that the dataframe contains information on length and width of petals and sepals of different iris species.
+The summary function gives information on the mean and quartile values of the overall length and widths of all irises. 
 
 ### Explore variables in the iris dataframe.
-2. In particular, I want to observe the species in this dataframe.
+#### Part 2: Explore the species and sepal length variables in the iris dataframe.
+##### Look at what species are present:
 ```{r}
 iris$Species
 ```
@@ -35,7 +38,7 @@ I conclude there are 3 different species (by looking at the outpud "levels"): se
 
 
 
-3. Compare sepal length (Sepal.Length) of setosa and versicolor species
+##### Compare sepal length (Sepal.Length) of setosa and versicolor species
 To do this, I used the [cm005 notes on piping](http://stat545.com/Classroom/notes/cm005.nb.html) as well as a tutorial on finding the [mean of a column in r](https://stackoverflow.com/questions/23163863/mean-of-a-column-in-a-data-frame-given-the-columns-name)
 ```{r}
 library(tidyverse)
@@ -55,61 +58,33 @@ mean(versicolor[["Sepal.Length"]])
 
 ```
 
-4. I can calculate the variance of the sepal length in the setosa species using the var function:
+##### I can calculate the variance of the sepal length in the setosa species using the var function:
 ```{r}
 var(setosa)
 ```
-5. I can check this result manually, by calculating the variance. The equation for variance can be found [here](http://www.r-tutor.com/elementary-statistics/numerical-measures/variance)
+##### I can check this result manually, by calculating the variance. The equation for variance can be found [here](http://www.r-tutor.com/elementary-statistics/numerical-measures/variance)
 
-
-breaking down the equation:
-  1.find the differences between each entry in setosa compared to the mean:
-  (setosa$Sepal.Length - 5.006)
-  2. Take the square of resulting vector:
-(setosa$Sepal.Length - 5.006)^2
+######breaking down the equation:
+1. find the differences between each entry in setosa compared to the mean:
+   (setosa$Sepal.Length - 5.006)
+2. Take the square of resulting vector:
+  (setosa$Sepal.Length - 5.006)^2
 3. Take the sum of the squared vector:
-sum((setosa$Sepal.Length - 5.006)^2)
+  sum((setosa$Sepal.Length - 5.006)^2)
 4. Divide by the number of rows in setosa -1
-sum((setosa$Sepal.Length - 5.006)^2)/(nrow(setosa)-1)
+  sum((setosa$Sepal.Length - 5.006)^2)/(nrow(setosa)-1)
 
+Overall, the equation becomes:
 ```{r}
-
-#overall, the equation comes to:
 sum((setosa$Sepal.Length-5.006)^2)/(nrow(setosa)-1)
 
-
-
 ```
 
+**Conclusion:** The result is the same for both the manual variance calculation as well as the result from the var function!
 
-
- 
-
-1. Load the gapminder package and explore the data inside it using the head() function
-```{r}
-library(gapminder)
-head(gapminder)
-```
-
-2. Load tidyverse and explore the average life expectancy in 1952 in the continent with the most entries.
-```{r}
-library(tidyverse)
-gapminder %>% 
-  select(continent, lifeExp, year) %>% 
-  filter(year =="1952") %>% 
-  summary() #this outputs the 5 continents, so I can ensure there are values in each one, and there are.
+####Part 3: 
 
 
 
-```
-3. From above, I can see that there are the most entries in the continent of Africa, so I will explore Asia's average life expectancy in 1952.
-```{r}
-gapminder %>% 
-  select(continent, lifeExp, year) %>% 
-  filter(continent== "Asia" & year =="1952") %>% 
-  summary()
 
-#using the summary function, I determine that the mean life expectancy in Africa in 1952 is 46.31 years. 
-  
-```
 
