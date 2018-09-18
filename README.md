@@ -2,7 +2,7 @@
 # Jasmine's Homework01 Assignment
 This Repo is where I will be submitting exercises for the first [STAT 545A](http://stat545.com/) homework assignment :bowtie:
 
-Note: I initially misunderstood homework assignment, so there are two sets of files in this Repo. 
+**Note:** I initially misunderstood homework assignment, so there are two sets of files in this Repo. 
 The correct files are: 
 [STAT545_Gapminder_Updated.Rmd](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_Updated.Rmd)
 and 
@@ -10,6 +10,7 @@ and
 
 The other files [STAT545_Gapminder_hw01.md](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_hw01.md) and [STAT545_Gapminder_hw01.Rmd](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_hw01.Rmd) contain an analysis of a small vector dataset that I created, and performed a t-test on. 
 
+Please consider the "updated" files as my homework submission, but feel free to look through the other files as I would love any suggestions on how to improve the code.
 
 ## About Me!
 I'm a second year MSc Student in [Biochemistry and Molecular Biology](https://biochem.ubc.ca/). Briefly, we study translation and use RNA viruses as a model to study unique translation mechanisms. I'm excited to be taking this class, so I can do better analyses of my data, as well as start learning skills for future jobs! 
