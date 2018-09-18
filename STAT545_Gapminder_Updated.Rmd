@@ -1,0 +1,74 @@
+---
+title: "STAT545_Gapminder_Updated"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Updated Gapminder Homework Assignment
+
+**Note:** A previous file shows a data analysis I attempted using a dataset that I created myself. I misunderstood the homework instructions, so I am performing the correct data analysis here. In the original file [STAT545_gapminder_hw01](https://github.com/STAT545-UBC-students/hw01-JasmineLib/blob/master/STAT545_Gapminder_hw01.md) I performed a t-test on two of my data sets, and studied the resulting p-values (with links on how I learned to do this), which may be useful to some of you reading this now!
+
+Part 1
+###Explore the iris dataframe
+
+```{r}
+data(iris)
+head(iris)
+ncol(iris)
+nrow(iris)
+summary(iris)
+
+```
+
+There are 5 columns and 150 rows in this dataset.
+
+### Explore variables in the iris dataframe.
+2. In particular, I want to observe the species in this dataframe.
+```{r}
+iris$Species
+```
+I conclude there are 3 different species (by looking at the outpud "levels"): setosa, versicolor and virginica
+
+
+
+3. Compare sepal length (Sepal.Length) of setosa and versicolor species
+```{r}
+
+```
+
+
+
+
+ 
+
+1. Load the gapminder package and explore the data inside it using the head() function
+```{r}
+library(gapminder)
+head(gapminder)
+```
+
+2. Load tidyverse and explore the average life expectancy in 1952 in the continent with the most entries.
+```{r}
+library(tidyverse)
+gapminder %>% 
+  select(continent, lifeExp, year) %>% 
+  filter(year =="1952") %>% 
+  summary() #this outputs the 5 continents, so I can ensure there are values in each one, and there are.
+
+
+
+```
+3. From above, I can see that there are the most entries in the continent of Africa, so I will explore Asia's average life expectancy in 1952.
+```{r}
+gapminder %>% 
+  select(continent, lifeExp, year) %>% 
+  filter(continent== "Asia" & year =="1952") %>% 
+  summary()
+
+#using the summary function, I determine that the mean life expectancy in Africa in 1952 is 46.31 years. 
+  
+```
+
